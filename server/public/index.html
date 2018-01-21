@@ -8,9 +8,10 @@
 </head>
 <body ng-app="galleryApp">
     <h1>Amy's Gallery</h1>
-    <div ng-controller="GalleryController as vm"></div>
-    
-
-    
+    <div ng-controller="GalleryController as vm">
+        <div ng-repeat="image in vm.imageGallery">
+            <img src="{{image.image}}" alt="" width="300" height="300">
+        </div>
+    </div>
 </body>
 </html>
