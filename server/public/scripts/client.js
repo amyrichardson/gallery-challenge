@@ -12,8 +12,12 @@ app.controller('GalleryController', ['$http', function($http){
             method: 'GET',
             url: '/images'
         }).then(function(response){
-            self.imageGallery = response;
+            console.log('response from get:', response);
+            
+            self.imageGallery = response.data;
+            console.log('images: ', self.imageGallery);
         });
     }
 
+    self.getImages();    
 }]);
