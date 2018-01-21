@@ -10,7 +10,10 @@
     <h1>Amy's Gallery</h1>
     <div ng-controller="GalleryController as vm">
         <div ng-repeat="image in vm.imageGallery">
-            <img src="{{image.image}}" alt="" width="300" height="300">
+            <div ng-click="vm.flipCard()">
+                <img ng-show="vm.imageRevealed" ng-src="{{image.image}}" width="300" height="300">
+                <div ng-show="vm.synopsisRevealed">{{image.synopsis}}</div>
+            </div>
         </div>
     </div>
 </body>

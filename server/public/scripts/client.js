@@ -6,7 +6,19 @@ app.controller('GalleryController', ['$http', function($http){
     console.log('GalleryController loaded');
     var self = this;
     self.imageGallery = [];
+    self.imageRevealed = true;
+    self.synopsisRevealed = false;
 
+    self.flipCard = function () {
+        if(self.imageRevealed) {
+            self.imageRevealed = false;
+            self.synopsisRevealed = true; 
+        } else {
+            self.imageRevealed = true;
+            self.synopsisRevealed = false;
+        }
+    }
+    
     self.getImages = function () {
         $http({
             method: 'GET',
