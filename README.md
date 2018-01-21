@@ -7,5 +7,5 @@
 [x] Display images on page
 [x] Click picture - see synopsis
 [x] Favorite picture button - post to db to keep track
-[ ] Styles
+[x] Styles
 [ ] Host on heroku

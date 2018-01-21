@@ -8,12 +8,18 @@
     <script src="/scripts/client.js"></script>
 </head>
 <body ng-app="galleryApp">
+    <header>
+        <h1>Amy's Gallery</h1>
+    </header>
     <div ng-controller="GalleryController as vm">
         <div class="gallery-container">
             <div ng-repeat="image in vm.imageGallery" class="image-card">
                 <img ng-click="vm.flipCard(image)" ng-hide="vm.imageRevealed[image.id]" ng-src="{{image.image}}" width="300" height="300">
                 <div ng-click="vm.flipCard(image)" class="image-synopsis" ng-show="vm.imageRevealed[image.id]">{{image.synopsis}}</div>
-                <div><button ng-click="vm.addHeart(image)" class="heart-image"><i class="fas fa-heart"></i></button>{{image.hearts}}</div>
+                <div>
+                    <button ng-click="vm.addHeart(image)" class="heart-image"><i class="fas fa-heart"></i></button>
+                    <span class="total-hearts">{{image.hearts}}</span>
+                </div>
             </div>
         </div>
     </div>
