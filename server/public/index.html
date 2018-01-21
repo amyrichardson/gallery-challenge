@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Amy's Gallery</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="/styles/main.css" />
     <script src="/vendors/angular.min.js"></script>
     <script src="/scripts/client.js"></script>
@@ -9,9 +10,10 @@
 <body ng-app="galleryApp">
     <div ng-controller="GalleryController as vm">
         <div class="gallery-container">
-            <div ng-repeat="image in vm.imageGallery" class="image-card" ng-click="vm.flipCard(image)">
-                <img ng-hide="vm.imageRevealed[image.id]" ng-src="{{image.image}}" width="300" height="300">
-                <div ng-show="vm.imageRevealed[image.id]">{{image.synopsis}}</div>
+            <div ng-repeat="image in vm.imageGallery" class="image-card">
+                <img ng-click="vm.flipCard(image)" ng-hide="vm.imageRevealed[image.id]" ng-src="{{image.image}}" width="300" height="300">
+                <div ng-click="vm.flipCard(image)" class="image-synopsis" ng-show="vm.imageRevealed[image.id]">{{image.synopsis}}</div>
+                <div><button ng-click="vm.addHeart(image)" class="heart-image"><i class="fas fa-heart"></i></button>{{image.hearts}}</div>
             </div>
         </div>
     </div>

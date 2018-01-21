@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: lightgray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .gallery-container {
@@ -14,4 +15,27 @@ html, body {
 
 .image-card {
     padding: 20px;
+    margin: 10px;
+    border: 1px dashed black;
+    text-align: center;
+}
+
+.image-synopsis {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    font-size: 18pt;
+    text-align: center;
+}
+
+.heart-image {
+    font-size: 18pt;
+    background-color: lightgray;
+    outline: 0;
+    border: 0;
+}
+
+.heart-image:hover {
+    color: red;
 }

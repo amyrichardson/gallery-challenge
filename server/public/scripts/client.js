@@ -19,16 +19,27 @@ app.controller('GalleryController', ['$http', function($http){
             self.imageRevealed[image.id] = false;
         }
     }
+
+    self.addHeart = function (image) {
+        $http({
+            method: 'PUT',
+            url: '/images/' + image.id,
+            data: {}
+        }).then(function(response){
+            self.getImages();
+        })
+        .catch(function(error) {
+            console.log('error: ', error);
+        })
+        
+    }
     
     self.getImages = function () {
         $http({
             method: 'GET',
             url: '/images'
         }).then(function(response){
-            console.log('response from get:', response);
-            
             self.imageGallery = response.data;
-            console.log('images: ', self.imageGallery);
         });
     }
 

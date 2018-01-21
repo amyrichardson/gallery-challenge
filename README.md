@@ -6,6 +6,6 @@
 [x] Get request to database working
 [x] Display images on page
 [x] Click picture - see synopsis
-[ ] Favorite picture button - post to db to keep track
+[x] Favorite picture button - post to db to keep track
 [ ] Styles
 [ ] Host on heroku
