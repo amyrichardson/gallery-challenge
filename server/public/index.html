@@ -7,12 +7,11 @@
     <script src="/scripts/client.js"></script>
 </head>
 <body ng-app="galleryApp">
-    <h1>Amy's Gallery</h1>
     <div ng-controller="GalleryController as vm">
-        <div ng-repeat="image in vm.imageGallery">
-            <div ng-click="vm.flipCard()">
-                <img ng-show="vm.imageRevealed" ng-src="{{image.image}}" width="300" height="300">
-                <div ng-show="vm.synopsisRevealed">{{image.synopsis}}</div>
+        <div class="gallery-container">
+            <div ng-repeat="image in vm.imageGallery" class="image-card" ng-click="vm.flipCard(image)">
+                <img ng-hide="vm.imageRevealed[image.id]" ng-src="{{image.image}}" width="300" height="300">
+                <div ng-show="vm.imageRevealed[image.id]">{{image.synopsis}}</div>
             </div>
         </div>
     </div>

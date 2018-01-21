@@ -6,16 +6,17 @@ app.controller('GalleryController', ['$http', function($http){
     console.log('GalleryController loaded');
     var self = this;
     self.imageGallery = [];
-    self.imageRevealed = true;
-    self.synopsisRevealed = false;
+    self.imageRevealed = {};
 
-    self.flipCard = function () {
-        if(self.imageRevealed) {
-            self.imageRevealed = false;
-            self.synopsisRevealed = true; 
+    for (var i = 0, length = self.imageGallery.length; i < length; i++) {
+        self.imageRevealed[self.imageGallery[i].id] = false;
+      }
+
+    self.flipCard = function (image) {
+        if(!self.imageRevealed[image.id]){
+            self.imageRevealed[image.id] = true;
         } else {
-            self.imageRevealed = true;
-            self.synopsisRevealed = false;
+            self.imageRevealed[image.id] = false;
         }
     }
     

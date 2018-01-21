@@ -1,0 +1,17 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.gallery-container {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image-card {
+    padding: 20px;
+}
